@@ -93,7 +93,7 @@ switch based lookup instead of a virtual call.
 | fibers with full stacks | medium        | medium |  medium   |      low            |              low                   |  low                           |
 | fibers with small stacks|  low           | low   |  medium   |      low            |              low                   |  medium                        |
 | stackless coroutines without trick | low | low   |  low      |      high           |             high                   |  high                          |
-| stackless coroutines with trick | low |  | low   |  medium   |      medium         |            medium                  |  high                          |
+| stackless coroutines with trick | low |   low   |  medium   |      medium         |            medium                  |  high                          |
 
 ### Additional considerations in languages that avoid allocation.
 
