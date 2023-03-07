@@ -87,7 +87,7 @@ switch based lookup instead of a virtual call.
 
 #### Summary
 
-| Method       | setup cost | static resource cost |yeild cost | coroutine call cost | ability to optimise desugared code | implementation cost            |
+| Method       | setup cost | static resource cost |yield cost | coroutine call cost | ability to optimize desugared code | implementation cost            |
 |--------------|------------|----------------------|-----------|---------------------|------------------------------------|--------------------------------|
 | thread       |   high     |   high               |  high     |      low            |              low                   |  almost zero (if threads already exist)|
 | fibers with full stacks | medium        | medium |  medium   |      low            |              low                   |  low                           |
@@ -100,8 +100,8 @@ switch based lookup instead of a virtual call.
 With fibers/threads there is a massive allocation. This makes them hard to use without avoiding allocation. For stackless
 coroutines as long as there is no recursion we can allocate a single object including all the frames that could be in the list. If it doesn't last long
 we can keep it on the original stack frame. This is very useful for generators where the caller often keeps them on a single frame. 
-On the other hand we may have to think about moving the frames though or avoid moving them. Depending on the progamming language this may be easy
-(i.e. it doesn't matter with GC) or very hard (rust has to do fancy stuff with `Pin` as withotu it everything is assumed to be movable by simple memory movements). 
+On the other hand we may have to think about moving the frames though or avoid moving them. Depending on the programming language this may be easy
+(i.e. it doesn't matter with GC) or very hard (rust has to do fancy stuff with `Pin` as without it everything is assumed to be movable by simple memory movements). 
 
 
 ### Which implementation should I use?
