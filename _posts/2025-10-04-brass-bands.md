@@ -1,5 +1,5 @@
 
-# Unveiling the Impact of Draw Position in Brass Band Contests: A Data-Driven Analysis
+# An analysis of the link between Brass band draw position and results
 
 ## Introduction
 
@@ -28,12 +28,12 @@ was no competitions in 2020 due to Covid.
 Band names often appear in multiple variants (e.g., "City of Oxford Band", "City of Oxford Silver"). For the main analysis this is irrelevant as we only care about result vs draw position.
 
 
+
 For plotting result vs draw position, the results were normalized using an unbiased formula to ensure fair comparison across contests of different sizes. Instead of simply using `i/n`, we use:
 
+    k = (2 * p - 1) / (2 * n)
 
-$k = (2 × p - 1) / (2 × n)$$
-
-Where `p` is the band's rank (1 for first, 2 for second, etc.) and `n` is the number of bands in the contest. This method spaces the bands evenly between 0 and 1, with the first place at $1/(2n)$ and the last at $1 - 1/(2n)$. It avoids bias at the endpoints and ensures the mean normalized place is 0.5.
+where `p` is the band's rank (1 for first, 2 for second, etc.) and n is the number of bands in the contest. This method spaces the bands evenly between 0 and 1, with the first place at 1/(2n) and the last at `1 - 1/(2n)`. It avoids bias at the endpoints and ensures the mean normalized place is 0.5.
 
 ## Visualization
 
@@ -43,11 +43,11 @@ I looked at two things: whether being ranked some place relative to the beginnin
 To explore the data, I created a pair visualizations:
 
 - **Draw Position vs. Result:**
-  ![Draw Position vs Result](2025-10-04-images/draw_vs_result_boxplot.png)
+  ![Draw Position vs Result](/assets/images/2025-10-04/draw_vs_result_boxplot.png)
   A box-and-whisker plot showing the distribution of normalized results by draw position. The y-axis is normalized so that 0 represents 1st place and 1 represents last place.
 
 - **Reverse Draw Position Analysis:**
-  ![Reverse Draw Position vs Result](2025-10-04-images/draw_vs_result_boxplot_reverse.png)
+  ![Reverse Draw Position vs Result](/assets/images/2025-10-04/draw_vs_result_boxplot_reverse.png)
   This plot examines results based on position from the end of the draw, revealing whether late performers are advantaged or disadvantaged.
 
 In both of these I dropped any draw/reverse-draw position where fewer than 10 bands were placed because there is not much data.
@@ -126,7 +126,7 @@ Key findings:
 I also created a pretty graph of the position of bands over time, highlighting my band.
 
 **Grading Positions by Year:**
-![Grading Positions by Year](2025-10-04-images/grading_positions_by_year.png)
+![Grading Positions by Year](/assets/images/2025-10-04/grading_positions_by_year.png)
 
 ## Conclusions
 
